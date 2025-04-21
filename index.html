@@ -3,93 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Cleaning Ladies | Professional Cleaning You Can Trust</title>
+  <title>The Cleaning Ladies | Sparkling Clean Comfort</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
   <!-- Styles -->
   <style>
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html {
+    html, body {
+      height: 100%;
       scroll-behavior: smooth;
-    }
-    body {
       font-family: 'Poppins', sans-serif;
-      background: #f7f9fc;
+      background: #ffffff;
       color: #333;
-      line-height: 1.6;
     }
     header {
-      background: url('https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 150px 20px;
       position: relative;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #ffc0cb, #7fffd4);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
     }
-    header::after {
-      content: "";
+    #bubbles {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
     }
-    header h1, header p, header a {
-      position: relative;
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 700;
+      margin-bottom: 10px;
       z-index: 1;
     }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
     header p {
-      font-size: 1.5em;
+      font-size: 1.2em;
       margin-bottom: 20px;
+      z-index: 1;
     }
     .btn-primary {
-      background-color: #0A66C2;
+      background-color: #00bfff;
       color: white;
-      padding: 12px 30px;
+      padding: 14px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s;
+      z-index: 1;
+      transition: background 0.3s;
     }
     .btn-primary:hover {
-      background-color: #084d9b;
+      background-color: #0099cc;
     }
     section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 70px 20px;
       text-align: center;
     }
     h2 {
-      font-size: 2.4em;
-      margin-bottom: 20px;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #0A66C2;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-top: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .card {
-      background: white;
-      padding: 30px;
+      background: #f7f7f7;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s;
     }
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
     footer {
       background: #0A66C2;
@@ -97,6 +100,16 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+      margin-top: 50px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header p {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
@@ -104,29 +117,26 @@
 <body>
 
 <header>
-  <h1>Your Home, Our Care: Trusted Cleaning Since 1998</h1>
-  <p>Professional, Reliable, and Insured Cleaning Services Tailored to Your Life</p>
-  <a href="#services" class="btn-primary">Get Your Free Quote</a>
+  <canvas id="bubbles"></canvas>
+  <h1>Welcome to Sparkling Clean Comfort</h1>
+  <p>Professional, Reliable, and Insured Cleaning Services</p>
+  <a href="#services" class="btn-primary">Get Your Free Estimate</a>
 </header>
 
-<section id="advantages">
+<section id="about">
   <h2>Why Choose The Cleaning Ladies?</h2>
   <div class="grid">
     <div class="card">
-      <h3>25+ Years of Experience</h3>
-      <p>Serving families across Riverside and beyond since 1998.</p>
+      <h3>✨ 25+ Years of Experience</h3>
+      <p>Serving Riverside, Rancho, and surrounding areas since 1998.</p>
     </div>
     <div class="card">
-      <h3>Fully Insured & Bonded</h3>
-      <p>Your home and valuables are protected at every step.</p>
+      <h3>🧼 Fully Insured & Bonded</h3>
+      <p>Your home is protected every step of the way by certified professionals.</p>
     </div>
     <div class="card">
-      <h3>Professional Team</h3>
-      <p>Background-checked, trained, and committed to excellence.</p>
-    </div>
-    <div class="card">
-      <h3>Flexible Cleaning Plans</h3>
-      <p>Custom services designed to fit your schedule and needs.</p>
+      <h3>👩‍🔧 Professional Female Team</h3>
+      <p>Friendly, background-checked women who love making homes sparkle.</p>
     </div>
   </div>
 </section>
@@ -135,35 +145,73 @@
   <h2>Our Cleaning Services</h2>
   <div class="grid">
     <div class="card">
-      <h3>Recurring Home Cleaning</h3>
-      <p>Weekly, bi-weekly, or monthly cleaning to keep your home fresh and clean.</p>
+      <h3>🏡 Recurring Home Cleaning</h3>
+      <p>Weekly, bi-weekly or monthly visits to keep your home fresh and clean.</p>
     </div>
     <div class="card">
-      <h3>Deep Cleaning</h3>
-      <p>A thorough, top-to-bottom refresh for your space.</p>
+      <h3>🛋️ Deep Cleaning</h3>
+      <p>Intense top-to-bottom deep cleanings to refresh your space completely.</p>
     </div>
     <div class="card">
-      <h3>Move In / Move Out</h3>
-      <p>Start fresh with spotless homes ready for your next chapter.</p>
+      <h3>🚚 Move-In / Move-Out</h3>
+      <p>Prepare your new home or leave your old one sparkling.</p>
     </div>
     <div class="card">
-      <h3>Post-Construction Cleaning</h3>
-      <p>From dust to sparkle, we handle the aftermath.</p>
-    </div>
-    <div class="card">
-      <h3>Carpet Cleaning</h3>
-      <p>Restore softness and cleanliness to your carpets.</p>
-    </div>
-    <div class="card">
-      <h3>Small Business Cleaning</h3>
-      <p>Professional cleaning tailored for small offices and workspaces.</p>
+      <h3>🏢 Small Business Cleaning</h3>
+      <p>Tailored cleaning services for offices, salons, and small business spaces.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 The Cleaning Ladies | Professional Cleaning You Can Trust
+  © 2025 The Cleaning Ladies | Sparkling Clean Comfort
 </footer>
+
+<!-- JavaScript Bubbles -->
+<script>
+const canvas = document.getElementById('bubbles');
+const ctx = canvas.getContext('2d');
+let bubbles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function createBubble() {
+  bubbles.push({
+    x: Math.random() * canvas.width,
+    y: canvas.height + 10,
+    radius: Math.random() * 8 + 2,
+    speed: Math.random() * 1 + 0.5
+  });
+}
+
+function drawBubbles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bubbles.forEach((bubble, index) => {
+    ctx.beginPath();
+    ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.fill();
+    bubble.y -= bubble.speed;
+    if (bubble.y < -10) {
+      bubbles.splice(index, 1);
+    }
+  });
+}
+
+function animate() {
+  drawBubbles();
+  if (Math.random() < 0.1) {
+    createBubble();
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>

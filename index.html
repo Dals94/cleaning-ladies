@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Cleaning Ladies | Sparkling Clean Comfort</title>
+  <title>The Cleaning Ladies | Sparkling Clean Comfort Since 1998</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Swiper CSS for Carrusel -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #fff; color: #333; }
+    html, body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #fff; color: #333; }
 
     /* HERO */
     header {
@@ -38,14 +41,15 @@
       z-index: 1;
     }
     header h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     header p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+      font-size: 1.3em;
+      margin-bottom: 25px;
       color: white;
     }
     .btn-primary {
@@ -61,18 +65,18 @@
       background-color: #0099cc;
     }
 
-    /* SECTIONS */
+    /* Sections */
     section {
       padding: 70px 20px;
       text-align: center;
     }
     h2 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-bottom: 30px;
-      color: #0A66C2;
+      color: #ff69b4;
     }
 
-    /* Cards */
+    /* Cards Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,32 +85,34 @@
       margin: 0 auto;
     }
     .card {
-      background: #f7f7f7;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s;
+      background: linear-gradient(to bottom right, #fefefe, #f5f5f5);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
     }
     .card img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 15px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-    .card h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
       color: #0A66C2;
+      margin-bottom: 10px;
     }
-    .card p {
+    .card-content p {
+      margin-bottom: 20px;
       font-size: 1em;
-      margin-bottom: 15px;
     }
     .btn-secondary {
-      background-color: #ffc0cb;
-      color: #333;
+      background-color: #ff69b4;
+      color: white;
       padding: 10px 20px;
       border-radius: 20px;
       text-decoration: none;
@@ -114,42 +120,46 @@
       font-size: 0.9em;
     }
     .btn-secondary:hover {
-      background-color: #ff99aa;
+      background-color: #ff4c9a;
     }
 
-    /* Swiper Carousel */
+    /* Swiper carousel */
     .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
     .swiper-slide {
-      background: #f7f7f7;
+      background: linear-gradient(145deg, #ffe0ec, #e0fff9);
       border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .swiper-slide h3 {
+      color: #0A66C2;
+      margin-bottom: 10px;
     }
 
     /* Reviews */
     .review {
       background: #f7f7f7;
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 30px;
-      max-width: 400px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       margin: 20px auto;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 400px;
     }
     .review img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
       border-radius: 50%;
       margin-bottom: 15px;
-      object-fit: cover;
     }
+
     footer {
       background: #0A66C2;
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      margin-top: 50px;
     }
   </style>
 </head>
@@ -158,62 +168,70 @@
 
 <header>
   <canvas id="bubbles"></canvas>
-  <h1>Your Home, Our Care: Trusted Cleaning Since 1998</h1>
-  <p>Professional, Reliable, and Insured Cleaning Services Tailored to Your Life.</p>
+  <h1>Trusted Cleaning Services Since 1998</h1>
+  <p>Delivering Sparkling Clean Homes Across Riverside, Rancho, and Surroundings for Over 25 Years.</p>
   <a href="#services" class="btn-primary">Get Your Free Estimate</a>
 </header>
 
-<section id="choose">
+<section id="choose" data-aos="fade-up">
   <h2>Why Choose The Cleaning Ladies?</h2>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <h3>25+ Years of Experience</h3>
-        <p>Serving Riverside, Rancho, and surrounding areas since 1998.</p>
+        <h3>Experienced Since 1998</h3>
+        <p>Serving Riverside, Rancho, and beyond for over 25 years.</p>
       </div>
       <div class="swiper-slide">
         <h3>Fully Insured & Bonded</h3>
-        <p>Your home and valuables are protected every step of the way.</p>
+        <p>Peace of mind knowing your home is protected by professionals.</p>
       </div>
       <div class="swiper-slide">
         <h3>Professional Female Team</h3>
-        <p>Friendly, background-checked women who love making homes sparkle.</p>
+        <p>Friendly, background-checked women ready to make your home sparkle!</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="services">
+<section id="services" data-aos="fade-up">
   <h2>Our Cleaning Services</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Home Cleaning">
-      <h3>Recurring Home Cleaning</h3>
-      <p>Weekly, bi-weekly or monthly visits to keep your home fresh and clean.</p>
-      <a href="https://wa.me/19514059514?text=Hello%20Cleaning%20Ladies,%20I%20am%20interested%20in%20recurring%20home%20cleaning%20services." target="_blank" class="btn-secondary">Request Service</a>
+      <img src="https://images.unsplash.com/photo-1594041685423-097fde52f9f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Home Cleaning">
+      <div class="card-content">
+        <h3>Recurring Home Cleaning</h3>
+        <p>Keep your home fresh and sparkling with regular visits.</p>
+        <a href="https://wa.me/19514059514?text=Hello%20Cleaning%20Ladies,%20I%20am%20interested%20in%20recurring%20home%20cleaning%20services." target="_blank" class="btn-secondary">Request Service</a>
+      </div>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Deep Cleaning">
-      <h3>Deep Cleaning</h3>
-      <p>Top-to-bottom deep cleanings to refresh your space completely.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'd%20like%20to%20book%20a%20deep%20cleaning%20service%20with%20you." target="_blank" class="btn-secondary">Request Service</a>
+      <img src="https://images.unsplash.com/photo-1617692855326-8fa0b5014a07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Deep Cleaning">
+      <div class="card-content">
+        <h3>Deep Cleaning</h3>
+        <p>Intensive top-to-bottom cleaning to refresh your space completely.</p>
+        <a href="https://wa.me/19514059514?text=Hi!%20I'd%20like%20to%20book%20a%20deep%20cleaning%20service%20with%20you." target="_blank" class="btn-secondary">Request Service</a>
+      </div>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046852.png" alt="Move In Out">
-      <h3>Move-In / Move-Out</h3>
-      <p>Prepare your new home or leave your old one sparkling clean.</p>
-      <a href="https://wa.me/19514059514?text=Hello,%20I%20need%20a%20move-in/move-out%20cleaning.%20Can%20you%20assist%20me?" target="_blank" class="btn-secondary">Request Service</a>
+      <img src="https://images.unsplash.com/photo-1581579180921-24f86ea85284?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Move In Cleaning">
+      <div class="card-content">
+        <h3>Move-In / Move-Out</h3>
+        <p>Start or end your chapter with a spotless clean space.</p>
+        <a href="https://wa.me/19514059514?text=Hello,%20I%20need%20a%20move-in/move-out%20cleaning.%20Can%20you%20assist%20me?" target="_blank" class="btn-secondary">Request Service</a>
+      </div>
     </div>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046848.png" alt="Small Business">
-      <h3>Small Business Cleaning</h3>
-      <p>Tailored cleaning services for offices, salons, and small business spaces.</p>
-      <a href="https://wa.me/19514059514?text=Hi%20Cleaning%20Ladies!%20I'm%20interested%20in%20small%20business%20office%20cleaning%20services." target="_blank" class="btn-secondary">Request Service</a>
+      <img src="https://images.unsplash.com/photo-1595168572062-95ccefbf3d7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Business Cleaning">
+      <div class="card-content">
+        <h3>Small Business Cleaning</h3>
+        <p>Professional cleaning for offices, salons, and business spaces.</p>
+        <a href="https://wa.me/19514059514?text=Hi%20Cleaning%20Ladies!%20I'm%20interested%20in%20small%20business%20office%20cleaning%20services." target="_blank" class="btn-secondary">Request Service</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="reviews">
+<section id="reviews" data-aos="fade-up">
   <h2>What Our Clients Say</h2>
   <div class="grid">
     <div class="review">
@@ -238,8 +256,9 @@
   © 2025 The Cleaning Ladies | Sparkling Clean Comfort
 </footer>
 
-<!-- JavaScript libraries -->
+<!-- JavaScript Libraries -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
 // Bubbles
@@ -274,13 +293,12 @@ animate();
 // Swiper Carousel
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
-  spaceBetween: 30,
   loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: { delay: 4000, disableOnInteraction: false },
 });
+
+// Animate on Scroll
+AOS.init({ duration: 1000, once: true });
 </script>
 
 </body>

@@ -3,31 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Cleaning Ladies | Trusted Cleaning Services Since 1998</title>
+  <title>The Cleaning Ladies | Since 1998</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- AOS Animate on Scroll -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #fff; color: #333; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; background: #fff; color: #333;}
 
-    /* Navbar */
     nav {
       width: 100%;
-      padding: 15px 30px;
       background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 15px 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       position: fixed;
       top: 0;
       left: 0;
@@ -47,12 +45,9 @@
     nav .logo span {
       font-size: 1.2em;
       font-weight: 600;
-      color: #333;
     }
 
-    /* HERO */
     header {
-      position: relative;
       height: 100vh;
       background: linear-gradient(to bottom right, #ffc0cb, #7fffd4);
       display: flex;
@@ -60,13 +55,15 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 100px 20px 20px;
+      position: relative;
       overflow: hidden;
-      padding: 0 20px;
-      padding-top: 100px;
     }
     #bubbles {
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
       z-index: 0;
     }
     header h1, header p, header a {
@@ -74,123 +71,91 @@
     }
     header h1 {
       font-size: 3em;
-      font-weight: 700;
-      margin-bottom: 15px;
       color: white;
+      margin-bottom: 15px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     header p {
       font-size: 1.3em;
-      margin-bottom: 25px;
       color: white;
+      margin-bottom: 20px;
     }
     .btn-primary {
-      background-color: #00bfff;
+      background: #00bfff;
       color: white;
-      padding: 14px 30px;
+      padding: 12px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
     .btn-primary:hover {
-      background-color: #0099cc;
+      background: #0099cc;
     }
 
-    /* Sections */
+    /* Services */
     section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
     h2 {
       font-size: 2.5em;
       margin-bottom: 30px;
-      color: #0A66C2;
+      color: #ff69b4;
     }
 
-    /* Cards Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .swiper {
+      width: 100%;
       max-width: 1200px;
-      margin: 0 auto;
+      padding-top: 50px;
+      padding-bottom: 80px;
     }
-    .card {
-      background: linear-gradient(to bottom right, #fefefe, #f5f5f5);
-      border-radius: 16px;
+    .swiper-slide {
+      background: #f7f7f7;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
     }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    .card img {
+    .swiper-slide img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 10px;
     }
-    .card-content {
-      padding: 20px;
-    }
-    .card-content h3 {
+    .swiper-slide h3 {
+      font-size: 1.5em;
       color: #0A66C2;
       margin-bottom: 10px;
     }
-    .card-content p {
-      margin-bottom: 20px;
+    .swiper-slide p {
       font-size: 1em;
+      margin-bottom: 20px;
+      color: #666;
     }
     .btn-secondary {
-      background-color: #ff69b4;
+      background: #ff69b4;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.9em;
+      font-size: 1em;
     }
     .btn-secondary:hover {
-      background-color: #ff4c9a;
-    }
-
-    /* Swiper carousel */
-    .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
-    .swiper-slide {
-      background: linear-gradient(145deg, #ffe0ec, #e0fff9);
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-    .swiper-slide h3 {
-      color: #0A66C2;
-      margin-bottom: 10px;
-    }
-
-    /* Reviews */
-    .review {
-      background: #f7f7f7;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      margin: 20px auto;
-      max-width: 400px;
-    }
-    .review img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
+      background: #ff4c9a;
     }
 
     footer {
       background: #0A66C2;
       color: white;
-      text-align: center;
       padding: 20px;
+      text-align: center;
       font-size: 0.9em;
     }
   </style>
@@ -207,54 +172,108 @@
 
 <header>
   <canvas id="bubbles"></canvas>
-  <h1>Trusted Cleaning Services Since 1998</h1>
-  <p>Delivering Sparkling Clean Homes Across Riverside, Rancho, and Surroundings for Over 25 Years.</p>
-  <a href="#services" class="btn-primary">Get Your Free Estimate</a>
+  <h1>Your Home, Our Care Since 1998</h1>
+  <p>Professional, Reliable, and Insured Cleaning Services Tailored to Your Life.</p>
+  <a href="#services" class="btn-primary">Get Your Free Quote</a>
 </header>
 
-<!-- TODO: Aquí abajo seguirían las secciones que ya tienes montadas: Choose, Services, Reviews, etc. 
-(Puedes copiar de los bloques anteriores que ya tienes). -->
+<section id="services">
+  <h2>Our Cleaning Services</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Home Cleaning">
+        <h3>Recurring Home Cleaning</h3>
+        <p>Keep your home fresh and sparkling with regular visits.</p>
+        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning%20service!" class="btn-secondary" target="_blank">Request Service</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/6195128/pexels-photo-6195128.jpeg" alt="Deep Cleaning">
+        <h3>Deep Cleaning</h3>
+        <p>Intensive top-to-bottom cleaning to refresh your space completely.</p>
+        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning%20service!" class="btn-secondary" target="_blank">Request Service</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/6195116/pexels-photo-6195116.jpeg" alt="Move-In Cleaning">
+        <h3>Move-In / Move-Out</h3>
+        <p>Start or end your chapter with a spotless clean space.</p>
+        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move%20In%20Move%20Out%20Cleaning!" class="btn-secondary" target="_blank">Request Service</a>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.pexels.com/photos/6195117/pexels-photo-6195117.jpeg" alt="Business Cleaning">
+        <h3>Small Business Cleaning</h3>
+        <p>Professional cleaning for offices, salons, and business spaces.</p>
+        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Business%20Cleaning!" class="btn-secondary" target="_blank">Request Service</a>
+      </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
 <footer>
   © 2025 The Cleaning Ladies | Sparkling Clean Comfort
 </footer>
 
-<!-- JavaScript Libraries -->
+<!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-// Bubbles animation
-const canvas = document.getElementById('bubbles');
-const ctx = canvas.getContext('2d');
-let bubbles = [];
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-function createBubble() {
-  bubbles.push({
-    x: Math.random() * canvas.width,
-    y: canvas.height + 10,
-    radius: Math.random() * 8 + 2,
-    speed: Math.random() * 1 + 0.5
-  });
-}
-function drawBubbles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  bubbles.forEach((bubble, index) => {
-    ctx.beginPath();
-    ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.fill();
-    bubble.y -= bubble.speed;
-    if (bubble.y < -10) { bubbles.splice(index, 1); }
-  });
-}
-function animate() { drawBubbles(); if (Math.random() < 0.1) { createBubble(); } requestAnimationFrame(animate); }
-animate();
+  const canvas = document.getElementById('bubbles');
+  const ctx = canvas.getContext('2d');
+  let bubbles = [];
+  function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  function createBubble() {
+    bubbles.push({
+      x: Math.random() * canvas.width,
+      y: canvas.height + 10,
+      radius: Math.random() * 8 + 2,
+      speed: Math.random() * 1 + 0.5
+    });
+  }
+  function drawBubbles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    bubbles.forEach((bubble, index) => {
+      ctx.beginPath();
+      ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.fill();
+      bubble.y -= bubble.speed;
+      if (bubble.y < -10) { bubbles.splice(index, 1); }
+    });
+  }
+  function animate() { drawBubbles(); if (Math.random() < 0.1) { createBubble(); } requestAnimationFrame(animate); }
+  animate();
 
-// Animate on Scroll
-AOS.init({ duration: 1000, once: true });
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+
+  AOS.init({ duration: 1000, once: true });
 </script>
 
 </body>

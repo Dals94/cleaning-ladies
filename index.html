@@ -5,24 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cleaning Ladies | Professional Cleaning Services Since 1998</title>
 
-  <!-- Fonts and External CSS -->
+  <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #333; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #f9fafb; color: #1f2937; }
+    a { text-decoration: none; }
 
     /* Navbar */
     nav {
-      width: 100%;
-      background: #174034; /* Verde elegante */
+      background: #234537;
+      padding: 15px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
       position: sticky;
       top: 0;
       z-index: 999;
@@ -33,65 +30,63 @@
       border-radius: 50%;
       object-fit: cover;
     }
-    nav .nav-text {
+    .nav-text {
       color: white;
-      font-size: 1.2em;
       font-weight: 600;
       margin-left: 10px;
+      font-size: 1.2em;
     }
     .nav-container {
       display: flex;
       align-items: center;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       position: relative;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
-      padding: 20px;
-      background-color: #f9fafb;
+      overflow: hidden;
+      background: #f9fafb;
     }
     .hero video {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover;
       z-index: 0;
+      opacity: 0.5;
     }
     .hero-content {
       position: relative;
       z-index: 1;
       max-width: 800px;
+      padding: 20px;
     }
     .hero-content img {
       width: 120px;
       margin-bottom: 20px;
-      border-radius: 50%;
-      background: white;
-      padding: 10px;
     }
     .hero-content h1 {
-      font-size: 2.8em;
+      font-size: 2.5em;
+      color: #234537;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
       margin-bottom: 20px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
     .btn-primary {
-      padding: 14px 30px;
-      background-color: #ec4899; /* Rosa fuerte */
+      padding: 15px 30px;
+      background-color: #ec4899;
       color: white;
-      font-weight: 600;
       border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 1em;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 20px;
     }
     .btn-primary:hover {
       background-color: #db2777;
@@ -103,15 +98,15 @@
       text-align: center;
     }
     h2 {
-      color: #174034;
-      font-size: 2.4em;
+      font-size: 2.2em;
       margin-bottom: 50px;
+      color: #234537;
     }
 
     /* Services */
-    .services-grid {
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       max-width: 1200px;
       margin: auto;
@@ -120,61 +115,99 @@
       background: white;
       border-radius: 15px;
       padding: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: 0.3s;
     }
     .service-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .service-card h3 {
+      color: #ec4899;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      margin-bottom: 20px;
+      color: #4b5563;
     }
 
     /* Why Choose */
-    .swiper {
-      padding-bottom: 50px;
-    }
-    .swiper-slide {
-      background: #174034;
+    .choose {
+      background: url('https://i.imgur.com/TgFJbTe.png') center/cover no-repeat;
+      background-attachment: fixed;
       color: white;
-      border-radius: 20px;
-      padding: 40px 20px;
+      background-color: #234537;
+      background-blend-mode: multiply;
+    }
+    .choose-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .choose-card {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
+    }
+    .choose-card h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
     }
 
     /* Gallery */
-    .gallery-grid {
+    .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       max-width: 1200px;
       margin: auto;
     }
-    .gallery-grid img {
-      border-radius: 12px;
-      object-fit: cover;
+    .gallery img {
       width: 100%;
-      height: 250px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
     }
 
-    /* WhatsApp Button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25D366;
+    /* Areas */
+    .areas {
+      background: #234537;
       color: white;
-      border-radius: 50%;
+      font-size: 1.2em;
+    }
+
+    /* CTA WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
       width: 60px;
       height: 60px;
-      font-size: 30px;
+      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       animation: bounce 2s infinite;
-      z-index: 9999;
+    }
+    .whatsapp-btn img {
+      width: 30px;
     }
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
+    }
+
+    /* Footer */
+    footer {
+      background: #234537;
+      color: white;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -184,102 +217,100 @@
 <!-- Navbar -->
 <nav>
   <div class="nav-container">
-    <img src="https://i.imgur.com/09Pbrsj.png" alt="Cleaning Ladies Logo">
+    <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
     <div class="nav-text">The Cleaning Ladies</div>
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-luxury-living-room-1149/1080p.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
+    <source src="https://cdn.coverr.co/videos/coverr-clean-modern-kitchen-2402/1080p.mp4" type="video/mp4">
   </video>
   <div class="hero-content" data-aos="fade-up">
-    <img src="https://i.imgur.com/09Pbrsj.png" alt="The Cleaning Ladies Logo">
-    <h1>Professional Cleaning Services Since 1998</h1>
+    <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
+    <h1>Professional Cleaning Services<br>Since 1998</h1>
     <a href="#services" class="btn-primary">Get Your Free Estimate</a>
   </div>
 </section>
 
-<!-- Services -->
+<!-- Our Services -->
 <section id="services">
-  <h2>Our Cleaning Services</h2>
-  <div class="services-grid" data-aos="fade-up">
+  <h2 data-aos="fade-up">Our Cleaning Services</h2>
+  <div class="services" data-aos="fade-up">
     <div class="service-card">
-      <h3 style="color:#ec4899;">Recurring Home Cleaning</h3>
-      <p>Keep your home fresh with regular visits.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+      <h3>Recurring Home Cleaning</h3>
+      <p>Keep your home fresh and sparkling with regular visits.</p>
+      <a href="https://wa.me/19514059514?text=I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-primary" target="_blank">Request Service</a>
     </div>
     <div class="service-card">
-      <h3 style="color:#ec4899;">Deep Cleaning</h3>
-      <p>Top-to-bottom intensive refresh of your space.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+      <h3>Deep Cleaning</h3>
+      <p>Top-to-bottom intensive cleaning to refresh your space completely.</p>
+      <a href="https://wa.me/19514059514?text=I'm%20interested%20in%20Deep%20Cleaning!" class="btn-primary" target="_blank">Request Service</a>
     </div>
     <div class="service-card">
-      <h3 style="color:#ec4899;">Move-In / Move-Out</h3>
+      <h3>Move-In / Move-Out</h3>
       <p>Start or end your chapter with a spotless clean.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move-In%20Move-Out!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+      <a href="https://wa.me/19514059514?text=I'm%20interested%20in%20Move-In%20or%20Move-Out%20Cleaning!" class="btn-primary" target="_blank">Request Service</a>
     </div>
     <div class="service-card">
-      <h3 style="color:#ec4899;">Small Business Cleaning</h3>
+      <h3>Small Business Cleaning</h3>
       <p>Professional cleaning for offices and salons.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+      <a href="https://wa.me/19514059514?text=I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-primary" target="_blank">Request Service</a>
     </div>
   </div>
 </section>
 
 <!-- Why Choose Us -->
-<section style="background:#f9fafb;">
-  <h2>Why Choose The Cleaning Ladies?</h2>
-  <div class="swiper mySwiper" style="padding: 0 20px;">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">✨ 25+ Years of Experience<br>Serving Riverside and surrounding areas.</div>
-      <div class="swiper-slide">🛡️ Insured & Bonded<br>Professional, trusted, certified team members.</div>
-      <div class="swiper-slide">👩‍🔬 All-Women Team<br>Friendly, background-checked professionals.</div>
+<section class="choose">
+  <h2 data-aos="fade-up">Why Choose The Cleaning Ladies?</h2>
+  <div class="choose-container" data-aos="fade-up">
+    <div class="choose-card">
+      <h3>✨ 25+ Years of Experience</h3>
+      <p>Serving Riverside and surroundings since 1998.</p>
+    </div>
+    <div class="choose-card">
+      <h3>🛡️ Insured & Bonded</h3>
+      <p>Certified and trusted professional team members.</p>
+    </div>
+    <div class="choose-card">
+      <h3>👩‍🔬 All-Women Team</h3>
+      <p>Friendly, background-checked, highly trained professionals.</p>
     </div>
   </div>
 </section>
 
 <!-- Gallery -->
 <section>
-  <h2>Gallery of Our Work</h2>
-  <div class="gallery-grid" data-aos="fade-up">
-    <img src="https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg" alt="Work 1">
-    <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Work 2">
-    <img src="https://images.pexels.com/photos/4792493/pexels-photo-4792493.jpeg" alt="Work 3">
-    <img src="https://images.pexels.com/photos/4107283/pexels-photo-4107283.jpeg" alt="Work 4">
+  <h2 data-aos="fade-up">Gallery of Our Work</h2>
+  <div class="gallery" data-aos="fade-up">
+    <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Cleaning 1">
+    <img src="https://images.pexels.com/photos/4792493/pexels-photo-4792493.jpeg" alt="Cleaning 2">
+    <img src="https://images.pexels.com/photos/4107283/pexels-photo-4107283.jpeg" alt="Cleaning 3">
+    <img src="https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg" alt="Cleaning 4">
   </div>
 </section>
 
-<!-- Areas We Serve -->
-<section style="background:#174034; color:white;">
-  <h2>Areas We Serve</h2>
-  <p>Corona, Riverside, Eastvale, Ontario, Rancho Cucamonga, Chino Hills, Chino, and surrounding cities.</p>
+<!-- Areas Served -->
+<section class="areas">
+  <h2 data-aos="fade-up">Areas We Serve</h2>
+  <p data-aos="fade-up">Corona, Riverside, Eastvale, Ontario, Rancho Cucamonga, Chino Hills, Chino, and surrounding cities.</p>
 </section>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/19514059514?text=Hi!%20I'd%20like%20to%20book%20a%20cleaning%20service!" class="whatsapp-button" target="_blank">
-  🟢
+<a href="https://wa.me/19514059514" class="whatsapp-btn" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
 <!-- Footer -->
-<footer style="background:#174034; color:white; text-align:center; padding:20px;">
+<footer>
   © 2025 The Cleaning Ladies | Professional Cleaning Services
 </footer>
 
-<!-- External Scripts -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
   AOS.init({ duration: 1000, once: true });
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: { delay: 4000, disableOnInteraction: false },
-  });
 </script>
 
 </body>

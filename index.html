@@ -94,6 +94,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s;
+      display: inline-block;
+      margin-top: 15px;
     }
     .btn-primary:hover {
       background: #db2777;
@@ -118,6 +120,10 @@
       border-radius: 15px;
       box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
     .service-card:hover {
       transform: translateY(-5px);
@@ -142,7 +148,7 @@
       object-fit: cover;
       border-radius: 15px;
     }
-    
+
     /* Areas */
     #areas {
       padding: 80px 20px;
@@ -218,21 +224,25 @@
     <div class="service-card">
       <h3 style="color:#ec4899;">Recurring Home Cleaning</h3>
       <p>Keep your home fresh with regular visits.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-primary">Request Service</a>
     </div>
 
     <div class="service-card">
       <h3 style="color:#ec4899;">Deep Cleaning</h3>
       <p>Top-to-bottom intensive refresh of your space.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning!" class="btn-primary">Request Service</a>
     </div>
 
     <div class="service-card">
       <h3 style="color:#ec4899;">Move-In / Move-Out</h3>
       <p>Start or end your chapter with a spotless clean.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move-In%20Move-Out%20Cleaning!" class="btn-primary">Request Service</a>
     </div>
 
     <div class="service-card">
       <h3 style="color:#ec4899;">Small Business Cleaning</h3>
       <p>Professional cleaning for offices and salons.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-primary">Request Service</a>
     </div>
 
   </div>
@@ -269,7 +279,6 @@
 <script>
   AOS.init({ duration: 1000, once: true });
 
-  // Simple fake carousel
   const images = [
     "https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg",
     "https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg",

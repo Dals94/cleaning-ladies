@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cleaning Ladies | Professional Cleaning Services Since 1998</title>
 
-  <!-- Fonts -->
+  <!-- Fonts and External CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,12 +13,12 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
+    body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #333; }
 
     /* Navbar */
     nav {
       width: 100%;
-      background: #0A2540; /* Azul navy */
+      background: #174034; /* Verde elegante */
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -56,11 +56,11 @@
       text-align: center;
       color: white;
       padding: 20px;
+      background-color: #f9fafb;
     }
     .hero video {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -75,6 +75,8 @@
       width: 120px;
       margin-bottom: 20px;
       border-radius: 50%;
+      background: white;
+      padding: 10px;
     }
     .hero-content h1 {
       font-size: 2.8em;
@@ -94,6 +96,86 @@
     .btn-primary:hover {
       background-color: #db2777;
     }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #174034;
+      font-size: 2.4em;
+      margin-bottom: 50px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Why Choose */
+    .swiper {
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background: #174034;
+      color: white;
+      border-radius: 20px;
+      padding: 40px 20px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .gallery-grid img {
+      border-radius: 12px;
+      object-fit: cover;
+      width: 100%;
+      height: 250px;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: bounce 2s infinite;
+      z-index: 9999;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
   </style>
 </head>
 
@@ -107,10 +189,10 @@
   </div>
 </nav>
 
-<!-- Hero Section with Video -->
+<!-- Hero Section -->
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-clean-modern-kitchen-2402/1080p.mp4" type="video/mp4">
+    <source src="https://cdn.coverr.co/videos/coverr-luxury-living-room-1149/1080p.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
   <div class="hero-content" data-aos="fade-up">
@@ -119,142 +201,86 @@
     <a href="#services" class="btn-primary">Get Your Free Estimate</a>
   </div>
 </section>
-<!-- Our Cleaning Services -->
-<section id="services" style="padding: 80px 20px; background: #f1f5f9; text-align: center;">
-  <h2 style="color: #0A2540; font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">Our Cleaning Services</h2>
 
-  <div class="swiper mySwiper" style="width: 90%; max-width: 1200px; margin: auto;" data-aos="fade-up">
-    <div class="swiper-wrapper">
-      
-      <!-- Slide 1 -->
-      <div class="swiper-slide" style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);">
-        <h3 style="color: #ec4899;">Recurring Home Cleaning</h3>
-        <p>Keep your home fresh and sparkling with regular visits.</p>
-        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-primary" target="_blank" style="margin-top: 20px; display: inline-block;">Request Service</a>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="swiper-slide" style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);">
-        <h3 style="color: #ec4899;">Deep Cleaning</h3>
-        <p>Top-to-bottom intensive cleaning to refresh your space completely.</p>
-        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning!" class="btn-primary" target="_blank" style="margin-top: 20px; display: inline-block;">Request Service</a>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="swiper-slide" style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);">
-        <h3 style="color: #ec4899;">Move-In / Move-Out</h3>
-        <p>Start or end your chapter with a spotless clean space.</p>
-        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move-In%20Cleaning!" class="btn-primary" target="_blank" style="margin-top: 20px; display: inline-block;">Request Service</a>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="swiper-slide" style="background: #ffffff; border-radius: 15px; padding: 30px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);">
-        <h3 style="color: #ec4899;">Small Business Cleaning</h3>
-        <p>Professional cleaning for offices, salons, and small business spaces.</p>
-        <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-primary" target="_blank" style="margin-top: 20px; display: inline-block;">Request Service</a>
-      </div>
-
+<!-- Services -->
+<section id="services">
+  <h2>Our Cleaning Services</h2>
+  <div class="services-grid" data-aos="fade-up">
+    <div class="service-card">
+      <h3 style="color:#ec4899;">Recurring Home Cleaning</h3>
+      <p>Keep your home fresh with regular visits.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="service-card">
+      <h3 style="color:#ec4899;">Deep Cleaning</h3>
+      <p>Top-to-bottom intensive refresh of your space.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+    </div>
+    <div class="service-card">
+      <h3 style="color:#ec4899;">Move-In / Move-Out</h3>
+      <p>Start or end your chapter with a spotless clean.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move-In%20Move-Out!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+    </div>
+    <div class="service-card">
+      <h3 style="color:#ec4899;">Small Business Cleaning</h3>
+      <p>Professional cleaning for offices and salons.</p>
+      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-primary" target="_blank" style="margin-top:20px; display:inline-block;">Request Service</a>
+    </div>
   </div>
 </section>
 
 <!-- Why Choose Us -->
-<section style="padding: 80px 20px; background: #0A2540; color: white; text-align: center;">
-  <h2 style="font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">Why Choose The Cleaning Ladies?</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    <div style="background: #1e3a8a; border-radius: 15px; padding: 30px; width: 280px;" data-aos="fade-up">
-      <h3>✨ 25+ Years of Experience</h3>
-      <p>Serving Riverside and surrounding areas since 1998.</p>
-    </div>
-    <div style="background: #1e3a8a; border-radius: 15px; padding: 30px; width: 280px;" data-aos="fade-up" data-aos-delay="100">
-      <h3>🛡️ Insured & Bonded</h3>
-      <p>Professional, trusted, and certified team members.</p>
-    </div>
-    <div style="background: #1e3a8a; border-radius: 15px; padding: 30px; width: 280px;" data-aos="fade-up" data-aos-delay="200">
-      <h3>👩‍🔬 All-Women Team</h3>
-      <p>Friendly, experienced, background-checked professionals.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section style="padding: 80px 20px; background: #f1f5f9; text-align: center;">
-  <h2 style="color: #0A2540; font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">What Our Clients Say</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    <div style="background: #ffffff; padding: 30px; border-radius: 15px; width: 280px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);" data-aos="fade-up">
-      <img src="https://randomuser.me/api/portraits/women/68.jpg" style="border-radius: 50%; width: 80px; margin-bottom: 10px;">
-      <h4>Jessica M.</h4>
-      <p>"The Cleaning Ladies are amazing! Professional and thorough."</p>
-    </div>
-    <div style="background: #ffffff; padding: 30px; border-radius: 15px; width: 280px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);" data-aos="fade-up" data-aos-delay="100">
-      <img src="https://randomuser.me/api/portraits/women/45.jpg" style="border-radius: 50%; width: 80px; margin-bottom: 10px;">
-      <h4>Emily R.</h4>
-      <p>"So reliable and trustworthy. Highly recommended!"</p>
-    </div>
-    <div style="background: #ffffff; padding: 30px; border-radius: 15px; width: 280px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05);" data-aos="fade-up" data-aos-delay="200">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" style="border-radius: 50%; width: 80px; margin-bottom: 10px;">
-      <h4>Michael D.</h4>
-      <p>"They left my new home spotless before I moved in!"</p>
+<section style="background:#f9fafb;">
+  <h2>Why Choose The Cleaning Ladies?</h2>
+  <div class="swiper mySwiper" style="padding: 0 20px;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">✨ 25+ Years of Experience<br>Serving Riverside and surrounding areas.</div>
+      <div class="swiper-slide">🛡️ Insured & Bonded<br>Professional, trusted, certified team members.</div>
+      <div class="swiper-slide">👩‍🔬 All-Women Team<br>Friendly, background-checked professionals.</div>
     </div>
   </div>
 </section>
 
 <!-- Gallery -->
-<section style="padding: 80px 20px; text-align: center;">
-  <h2 style="color: #0A2540; font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">Gallery of Our Work</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;" data-aos="fade-up">
-    <img src="https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg" alt="Gallery Image 1" style="border-radius: 12px;">
-    <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Gallery Image 2" style="border-radius: 12px;">
-    <img src="https://images.pexels.com/photos/4792493/pexels-photo-4792493.jpeg" alt="Gallery Image 3" style="border-radius: 12px;">
-    <img src="https://images.pexels.com/photos/4107283/pexels-photo-4107283.jpeg" alt="Gallery Image 4" style="border-radius: 12px;">
+<section>
+  <h2>Gallery of Our Work</h2>
+  <div class="gallery-grid" data-aos="fade-up">
+    <img src="https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg" alt="Work 1">
+    <img src="https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg" alt="Work 2">
+    <img src="https://images.pexels.com/photos/4792493/pexels-photo-4792493.jpeg" alt="Work 3">
+    <img src="https://images.pexels.com/photos/4107283/pexels-photo-4107283.jpeg" alt="Work 4">
   </div>
 </section>
 
-<!-- Areas Served -->
-<section style="padding: 80px 20px; background: #0A2540; color: white; text-align: center;">
-  <h2 style="font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">Areas We Serve</h2>
-  <p style="font-size: 1.2em;" data-aos="fade-up">Riverside, Rancho Cucamonga, Ontario, La Mirada, North Fontana, Upland, Eastvale, Chino Hills</p>
+<!-- Areas We Serve -->
+<section style="background:#174034; color:white;">
+  <h2>Areas We Serve</h2>
+  <p>Corona, Riverside, Eastvale, Ontario, Rancho Cucamonga, Chino Hills, Chino, and surrounding cities.</p>
 </section>
 
-<!-- Calendly Booking -->
-<section style="padding: 80px 20px; background: #f1f5f9; text-align: center;">
-  <h2 style="color: #0A2540; font-size: 2.4em; margin-bottom: 50px;" data-aos="fade-up">Book Your Cleaning Today</h2>
-  <div style="max-width: 800px; margin: auto;" data-aos="fade-up">
-    <iframe src="https://calendly.com/your-calendly-link/cleaning-estimate" width="100%" height="700" frameborder="0" style="border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" allowfullscreen></iframe>
-  </div>
-</section>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/19514059514?text=Hi!%20I'd%20like%20to%20book%20a%20cleaning%20service!" class="whatsapp-button" target="_blank">
+  🟢
+</a>
 
 <!-- Footer -->
-<footer style="background: #0A2540; color: white; text-align: center; padding: 30px 20px; font-size: 0.9em; margin-top: 50px;">
+<footer style="background:#174034; color:white; text-align:center; padding:20px;">
   © 2025 The Cleaning Ladies | Professional Cleaning Services
 </footer>
 
-<!-- Scripts -->
+<!-- External Scripts -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-// Swiper initialization
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
-
-// AOS init
-AOS.init({ duration: 1000, once: true });
+  AOS.init({ duration: 1000, once: true });
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+  });
 </script>
+
+</body>
+</html>

@@ -41,18 +41,23 @@
       border-radius: 50%;
       object-fit: cover;
     }
-    .nav-logo span {
+    .nav-texts {
+      display: flex;
+      flex-direction: column;
       margin-left: 10px;
+    }
+    .nav-title {
       color: white;
       font-weight: 700;
       font-size: 1.2em;
     }
-.nav-logo span {
-  margin-left: 10px;
-  color: white;
-  font-weight: 700;
-  font-size: 1.2em;
-}
+    .nav-slogan {
+      font-size: 0.8em;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 2px;
+    }
+
     /* Hero */
     .hero {
       position: relative;
@@ -116,8 +121,7 @@
     .btn-primary:hover {
       background: #db2777;
     }
-
-    /* Services */
+        /* Services */
     section {
       padding: 80px 20px;
       text-align: center;
@@ -263,7 +267,6 @@
       z-index: 999;
     }
   </style>
-
 </head>
 
 <body>
@@ -286,7 +289,7 @@
   </video>
   <div class="hero-content" data-aos="fade-up">
     <img src="https://i.imgur.com/09Pbrsj.png" alt="The Cleaning Ladies Logo">
-    <h1>Professional Cleaning Services<br>Since 1998</h1>
+    <h1>Professional Cleaning Services</h1>
     <p class="hero-tagline">Southern California’s Trusted Name in Cleaning Since 1998</p>
     <a href="#services" class="btn-primary">Get Your Free Estimate</a>
   </div>
@@ -374,6 +377,7 @@
     </div>
   </div>
 </section>
+
 <!-- Areas We Serve -->
 <section id="areas" style="background:#ffffff;">
   <h2 data-aos="fade-up">Areas We Serve</h2>

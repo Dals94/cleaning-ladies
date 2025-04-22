@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Cleaning Ladies | Professional Cleaning Services</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.imgur.com/09Pbrsj.png" type="image/png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -278,12 +281,32 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       z-index: 999;
     }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      display: none;
+      background: #ec4899;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 998;
+      transition: background 0.3s;
+    }
+    #scrollTopBtn:hover {
+      background: #db2777;
+    }
   </style>
 </head>
 
 <body>
-
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav>
   <div class="nav-logo">
     <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
@@ -306,6 +329,7 @@
     <a href="#services" class="btn-primary">Get Your Free Estimate</a>
   </div>
 </section>
+
 <!-- Services Section -->
 <section id="services">
   <h2 data-aos="fade-up">Our Cleaning Services</h2>
@@ -313,22 +337,22 @@
     <div class="service-card">
       <h3>Recurring Home Cleaning</h3>
       <p>Keep your home fresh with regular visits.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Recurring%20Home%20Cleaning!" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
+      <a href="https://wa.me/19514059514" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
     </div>
     <div class="service-card">
       <h3>Deep Cleaning</h3>
       <p>Top-to-bottom intensive cleaning refresh.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Deep%20Cleaning!" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
+      <a href="https://wa.me/19514059514" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
     </div>
     <div class="service-card">
       <h3>Move-In / Move-Out</h3>
       <p>Start or end your chapter with a spotless clean.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Move-In%20Move-Out%20Cleaning!" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
+      <a href="https://wa.me/19514059514" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
     </div>
     <div class="service-card">
       <h3>Small Business Cleaning</h3>
       <p>Professional cleaning for offices and salons.</p>
-      <a href="https://wa.me/19514059514?text=Hi!%20I'm%20interested%20in%20Small%20Business%20Cleaning!" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
+      <a href="https://wa.me/19514059514" class="btn-whatsapp" target="_blank">Request on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -430,10 +454,13 @@
   © 2025 The Cleaning Ladies | Professional Cleaning Services
 </footer>
 
-<!-- WhatsApp Floating -->
-<a href="https://wa.me/19514059514" class="whatsapp-btn" target="_blank">
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/19514059514" class="whatsapp-btn" target="_blank" aria-label="Chat with us on WhatsApp">
   📞 WhatsApp Us
 </a>
+
+<!-- Scroll to Top Button -->
+<div id="scrollTopBtn" onclick="scrollToTop()" title="Back to Top">↑</div>
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -454,6 +481,20 @@
       1024: { slidesPerView: 3 }
     }
   });
+
+  // Scroll to Top Button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 </script>
 
 </body>

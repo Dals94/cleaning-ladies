@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cleaning Ladies | Professional Cleaning Services</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- SwiperJS (carrusel) -->
+  <!-- SwiperJS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
   <!-- AOS Animations -->
@@ -25,7 +25,7 @@
       top: 0;
       width: 100%;
       padding: 15px 30px;
-      background: rgba(35, 68, 56, 0.7); /* Translúcido */
+      background: rgba(35, 68, 56, 0.7);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -75,12 +75,12 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(35, 68, 56, 0.35); /* Overlay verde suave */
+      background: rgba(35, 68, 56, 0.35);
       z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       background: rgba(255, 255, 255, 0.1);
       padding: 30px;
       border-radius: 20px;
@@ -108,7 +108,70 @@
       background: #db2777;
     }
 
-    /* Services */
+    /* Bubble Animation */
+    .bubbles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .bubbles span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.3);
+      bottom: -50px;
+      border-radius: 50%;
+      animation: bubble 20s infinite;
+    }
+    .bubbles span:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+    .bubbles span:nth-child(2) {
+      left: 20%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 2s;
+      animation-duration: 17s;
+    }
+    .bubbles span:nth-child(3) {
+      left: 25%;
+      animation-delay: 4s;
+    }
+    .bubbles span:nth-child(4) {
+      left: 40%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 0s;
+      animation-duration: 22s;
+    }
+    .bubbles span:nth-child(5) {
+      left: 70%;
+      animation-delay: 3s;
+    }
+    .bubbles span:nth-child(6) {
+      left: 80%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 5s;
+    }
+
+    @keyframes bubble {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Sections */
     section {
       padding: 80px 20px;
       text-align: center;
@@ -155,6 +218,7 @@
       z-index: 1001;
     }
   </style>
+
 </head>
 
 <body>
@@ -172,6 +236,16 @@
   <video autoplay muted loop playsinline>
     <source src="https://videos.pexels.com/video-files/31617692/13470975_1920_1080_24fps.mp4" type="video/mp4">
   </video>
+
+  <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <div class="hero-content" data-aos="fade-up">
     <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
     <h1>Professional Cleaning Services Since 1998</h1>

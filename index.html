@@ -5,209 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cleaning Ladies | Professional Cleaning Services Since 1998</title>
 
-  <!-- Fonts & CSS -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background: #f9fafb; color: #1f2937; }
-    a { text-decoration: none; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #1f2937; }
 
-    /* Navbar */
     nav {
-      background: #234537;
+      background: #204136;
       padding: 15px 30px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 999;
     }
     nav img {
       width: 50px;
       height: 50px;
-      border-radius: 50%;
       object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
     }
-    .nav-text {
-      color: white;
-      font-weight: 600;
-      margin-left: 10px;
+    nav .nav-text {
+      color: #fff;
+      font-weight: 700;
       font-size: 1.2em;
     }
-    .nav-container {
-      display: flex;
-      align-items: center;
-    }
 
-    /* Hero */
     .hero {
       position: relative;
       height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
-      background: #f9fafb;
+      color: white;
     }
     .hero video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 0;
-      opacity: 0.5;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(32, 65, 54, 0.5); /* Verde oscuro transparente */
+      z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 20px;
+      z-index: 2;
+      max-width: 700px;
     }
     .hero-content img {
       width: 120px;
       margin-bottom: 20px;
+      border-radius: 50%;
     }
     .hero-content h1 {
       font-size: 2.5em;
-      color: #234537;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
       margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
     .btn-primary {
-      padding: 15px 30px;
       background-color: #ec4899;
-      color: white;
+      color: #fff;
+      padding: 12px 28px;
       border-radius: 30px;
+      text-decoration: none;
       font-weight: 600;
-      font-size: 1em;
-      transition: 0.3s;
-      display: inline-block;
-      margin-top: 20px;
+      font-size: 1.1em;
+      transition: background 0.3s;
     }
     .btn-primary:hover {
       background-color: #db2777;
-    }
-
-    /* Sections */
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2.2em;
-      margin-bottom: 50px;
-      color: #234537;
-    }
-
-    /* Services */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .service-card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .service-card h3 {
-      color: #ec4899;
-      margin-bottom: 10px;
-    }
-    .service-card p {
-      margin-bottom: 20px;
-      color: #4b5563;
-    }
-
-    /* Why Choose */
-    .choose {
-      background: url('https://i.imgur.com/TgFJbTe.png') center/cover no-repeat;
-      background-attachment: fixed;
-      color: white;
-      background-color: #234537;
-      background-blend-mode: multiply;
-    }
-    .choose-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-    .choose-card {
-      background: rgba(255,255,255,0.1);
-      padding: 30px;
-      border-radius: 15px;
-      width: 280px;
-    }
-    .choose-card h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    /* Areas */
-    .areas {
-      background: #234537;
-      color: white;
-      font-size: 1.2em;
-    }
-
-    /* CTA WhatsApp */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      animation: bounce 2s infinite;
-    }
-    .whatsapp-btn img {
-      width: 30px;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Footer */
-    footer {
-      background: #234537;
-      color: white;
-      padding: 20px;
-      font-size: 0.9em;
     }
   </style>
 </head>
@@ -216,24 +96,34 @@
 
 <!-- Navbar -->
 <nav>
-  <div class="nav-container">
-    <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
-    <div class="nav-text">The Cleaning Ladies</div>
-  </div>
+  <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
+  <div class="nav-text">The Cleaning Ladies</div>
 </nav>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="https://cdn.coverr.co/videos/coverr-clean-modern-kitchen-2402/1080p.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/31617692/13470975_1920_1080_24fps.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
   </video>
+  <div class="overlay"></div>
   <div class="hero-content" data-aos="fade-up">
-    <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo">
+    <img src="https://i.imgur.com/09Pbrsj.png" alt="Logo The Cleaning Ladies">
     <h1>Professional Cleaning Services<br>Since 1998</h1>
     <a href="#services" class="btn-primary">Get Your Free Estimate</a>
   </div>
 </section>
 
+<!-- Aquí irían las demás secciones como Our Services, Gallery, Areas We Serve, WhatsApp Button, etc -->
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>
 <!-- Our Services -->
 <section id="services">
   <h2 data-aos="fade-up">Our Cleaning Services</h2>
